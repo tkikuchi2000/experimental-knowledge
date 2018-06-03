@@ -29,6 +29,28 @@ $ git push -u origin master
 
 ## gh-pagesブランチ作成
 
+{{< highlight bash >}}
+# orphanブランチ作成
+$ git checkout --orphan gh-pages
+
+# すべて管理対象から外す
+$ git rm --cached $(git ls-files)
+
+# README.mdのみ追加してコミット
+$ git add README.md
+$ git commit -m 'initial commit'
+
+# repositoryにpush
+$ git push origin gh-pages
+{{< /highlight >}}
+
+## masterブランチにgh-pagesブランチを追加
+
+{{< highlight bash >}}
+$ git checkout master
+$ git subtree add --prefix=public git@github.com:<user name>/<repo name>.git gh-pages --squash
+{{< /highlight >}}
+
 ## deploy.shスクリプト作成
 
 {{< highlight bash >}}
@@ -55,4 +77,10 @@ git commit -m "$msg"
 # Push source and build repos.
 git push origin master
 git subtree push --prefix=public git@github.com:<user name>/<repo name>.git gh-pages
+{{< /highlight >}}
+
+## デプロイ実行
+
+{{< highlight bash >}}
+$ sh ./deploy.sh
 {{< /highlight >}}
