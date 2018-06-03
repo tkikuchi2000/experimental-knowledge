@@ -3,10 +3,45 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tkikuchi2000.github.io/experimental-knowledge/posts/geth-private-network3/</loc>
+    <lastmod>2018-06-03T15:09:05+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://tkikuchi2000.github.io/experimental-knowledge/posts/geth-private-network2/</loc>
+    <lastmod>2018-06-03T14:09:05+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://tkikuchi2000.github.io/experimental-knowledge/posts/geth-private-network/</loc>
+    <lastmod>2018-06-03T13:09:05+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://tkikuchi2000.github.io/experimental-knowledge/posts/geth-install/</loc>
+    <lastmod>2018-06-03T10:01:10+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://tkikuchi2000.github.io/experimental-knowledge/posts/</loc>
     <lastmod>2017-03-02T12:00:00-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://tkikuchi2000.github.io/experimental-knowledge/tags/blockchain/</loc>
+    <lastmod>2018-06-03T15:09:05+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -16,15 +51,57 @@
   </url>
   
   <url>
+    <loc>https://tkikuchi2000.github.io/experimental-knowledge/tags/docker/</loc>
+    <lastmod>2018-06-03T15:09:05+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tkikuchi2000.github.io/experimental-knowledge/tags/ethereum/</loc>
+    <lastmod>2018-06-03T15:09:05+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://tkikuchi2000.github.io/experimental-knowledge/</loc>
+    <lastmod>2018-06-03T15:09:05+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://tkikuchi2000.github.io/experimental-knowledge/tags/</loc>
+    <loc>https://tkikuchi2000.github.io/experimental-knowledge/tags/geth/</loc>
+    <lastmod>2018-06-03T15:09:05+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tkikuchi2000.github.io/experimental-knowledge/tags/go/</loc>
+    <lastmod>2018-06-03T15:09:05+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tkikuchi2000.github.io/experimental-knowledge/tags/hugo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tkikuchi2000.github.io/experimental-knowledge/tags/</loc>
+    <lastmod>2018-06-03T15:09:05+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tkikuchi2000.github.io/experimental-knowledge/posts/hugo-install/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   
 </urlset>

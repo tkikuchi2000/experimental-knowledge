@@ -1,8 +1,8 @@
 ---
 title: "hugo install"
 date: 2018-06-02t11:56:12+09:00
-draft: true
-description: ""
+draft: false 
+description: "インストール～コンテンツ追加"
 featured_image: "/images/hugo-logo.png"
 tags: [hugo]
 toc: true

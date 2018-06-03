@@ -11,5 +11,75 @@
 	<atom:link href="https://tkikuchi2000.github.io/experimental-knowledge/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Geth: プライベートネットワーク作成3</title>
+      <link>https://tkikuchi2000.github.io/experimental-knowledge/posts/geth-private-network3/</link>
+      <pubDate>Sun, 03 Jun 2018 15:09:05 +0900</pubDate>
+      
+      <guid>https://tkikuchi2000.github.io/experimental-knowledge/posts/geth-private-network3/</guid>
+      <description>ether送金 参考: etherの送金
+バランス確認
+// アカウント作成  personal.newAccount(&amp;#39;test&amp;#39;) &amp;#34;0x5b5f42f5e38c469b23ad18c40b67c91f96f59b0c&amp;#34; &amp;gt; eth.accounts [&amp;#34;0x9a1c54f16dde5a5a13b0909ecd9e085e89929d91&amp;#34;, &amp;#34;0x7d59985d4570503078564db2ebac05c8d9d93ce2&amp;#34;, &amp;#34;0x5b5f42f5e38c469b23ad18c40b67c91f96f59b0c&amp;#34;] // バランス確認 &amp;gt; web3.fromWei(eth.getBalance(eth.accounts[1]), &amp;#34;ether&amp;#34;) 1 &amp;gt; eth.getBalance(eth.accounts[2]) 0   送金元アカウントのロック解除(personal.unlockAccount()) 送金実行(eth.sendTransaction())  // アンロック～送金 &amp;gt; personal.unlockAccount(eth.accounts[1]) Unlock account 0x7d59985d4570503078564db2ebac05c8d9d93ce2 Passphrase: true &amp;gt; eth.sendTransaction({from: eth.accounts[1], to: eth.accounts[2], value: web3.toWei(0.5, &amp;#34;ether&amp;#34;)}) &amp;#34;0xd22559eb889af11fa3d4bb827ef7b66da807d596ceec54769ef070f4064f4247&amp;#34; ... トランザクションID 
+送金結果の確認
+ トランザクション手数料 = 0.5 - 0.499999999999979 = 0.000000000000021 = 21000wei gas使用量 = 21000gas gasPrice = 21000wei / 21000gas = 1 wei  // バランス確認 &amp;gt; web3.</description>
+    </item>
+    
+    <item>
+      <title>Geth: プライベートネットワーク作成2</title>
+      <link>https://tkikuchi2000.github.io/experimental-knowledge/posts/geth-private-network2/</link>
+      <pubDate>Sun, 03 Jun 2018 14:09:05 +0900</pubDate>
+      
+      <guid>https://tkikuchi2000.github.io/experimental-knowledge/posts/geth-private-network2/</guid>
+      <description>アカウント作成～マイニング 参考：etherを採掘する 参考：ethereum/client-go
+コンソールに接続 geth attach
+$ geth attach rpc:http://localhost/8545 Welcome to the Geth JavaScript console! [...] &amp;gt; EOAアカウント作成 personal.newAccount(&amp;lt;pass phrase&amp;gt;)
+// ユーザ1 &amp;gt; personal.newAccount(&amp;#39;thisistestpassphrase&amp;#39;) &amp;#34;0x4dcf8b9a667869feb9a20f96ee9d4c12a72a7c76&amp;#34; // ユーザ2 &amp;gt; personal.newAccount(&amp;#34;thisistestpassphrase2&amp;#34;) &amp;#34;0xd7acd244088c9af95ec5c4c66753c21cc0f827e1&amp;#34; // アカウントの表示 &amp;gt; eth.accounts [&amp;#34;0x4dcf8b9a667869feb9a20f96ee9d4c12a72a7c76&amp;#34;, &amp;#34;0xd7acd244088c9af95ec5c4c66753c21cc0f827e1&amp;#34;]  etherbaseの割り当て マイニング報酬を紐づけるEOAアカウントを指定
+// アカウントリスト &amp;gt; eth.accounts [&amp;#34;0x4dcf8b9a667869feb9a20f96ee9d4c12a72a7c76&amp;#34;, &amp;#34;0xd7acd244088c9af95ec5c4c66753c21cc0f827e1&amp;#34;] // etherbase割当 &amp;gt; miner.setEtherbase(eth.accounts[1]) true // coinbase表示 &amp;gt; eth.coinbase &amp;#34;0xd7acd244088c9af95ec5c4c66753c21cc0f827e1&amp;#34; 
+マイニング miner.start(&amp;lt;thread_num&amp;gt;)
+マイニングの開始・停止
+// CPUの実行スレッド数を引数で渡す &amp;gt; miner.start(4) null // マイニング停止 &amp;gt; miner.stop() true</description>
+    </item>
+    
+    <item>
+      <title>Geth: プライベートネットワーク作成</title>
+      <link>https://tkikuchi2000.github.io/experimental-knowledge/posts/geth-private-network/</link>
+      <pubDate>Sun, 03 Jun 2018 13:09:05 +0900</pubDate>
+      
+      <guid>https://tkikuchi2000.github.io/experimental-knowledge/posts/geth-private-network/</guid>
+      <description> --devで起動した場合は、以下の手順は不要。
+Genesisファイルを作成 eth_private_net/myGenesis.json
+{ &amp;#34;config&amp;#34;: { &amp;#34;chainId&amp;#34;: 15 }, &amp;#34;nonce&amp;#34;: &amp;#34;0x0000000000000042&amp;#34;, &amp;#34;timestamp&amp;#34;: &amp;#34;0x0&amp;#34;, &amp;#34;parentHash&amp;#34;: &amp;#34;0x0000000000000000000000000000000000000000000000000000000000000000&amp;#34;, &amp;#34;extraData&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;gasLimit&amp;#34;: &amp;#34;0x8000000&amp;#34;, &amp;#34;difficulty&amp;#34;: &amp;#34;0x4000&amp;#34;, &amp;#34;mixhash&amp;#34;: &amp;#34;0x0000000000000000000000000000000000000000000000000000000000000000&amp;#34;, &amp;#34;coinbase&amp;#34;: &amp;#34;0x3333333333333333333333333333333333333333&amp;#34;, &amp;#34;alloc&amp;#34;: {} } Genesisブロックの初期化 以下のコマンドを実行すると、&amp;ndash;datadirで指定したディレクトリ以下にディレクトリが新しく作成されて、その中にgenesisブロックのブロックチェーン情報が保存される。
+$ geth --datadir /root/eth_private_net \  init \  /root/eth_private_net/myGenesis.json
+Geth起動  --networkidに、GenesisブロックのChainIDと同じIDを指定 --datadirにGenesisブロック初期化時と同じディレクトリを指定 --nodiscoverで、p2pノード探索を無効  $ geth --networkid &amp;#34;15&amp;#34; \  --nodiscover --datadir /root/eth_private_net console 2&amp;gt;&amp;gt; /root/eth_private_net/geth_err.log Genesisブロック情報を確認
+&amp;gt; eth.getBlock(0) [...]  </description>
+    </item>
+    
+    <item>
+      <title>Geth Install</title>
+      <link>https://tkikuchi2000.github.io/experimental-knowledge/posts/geth-install/</link>
+      <pubDate>Sun, 03 Jun 2018 10:01:10 +0900</pubDate>
+      
+      <guid>https://tkikuchi2000.github.io/experimental-knowledge/posts/geth-install/</guid>
+      <description>Geth Install 参考：Install the Ethereum CLI 参考：ethereum/client-go 参考：プライベート・ネットワークに接続する
+Dockerイメージ ダウンロード Official Dockerイメージを利用
+$ docker pull ethereum/client-go Dockerコンテナ作成/起動 docker-composeの場合
+# コンテナ起動 $ docker-compose up -d # コンテナ停止/再起動 $ docker-compose [stop|start] # docker-compose.yml version: &amp;#39;3&amp;#39; services: client-go: image: ethereum/client-go:latest # docker-compose.override.yml version: &amp;#39;3&amp;#39; services: client-go: volumes: - &amp;#34;./ethereum:/root/.ethereum&amp;#34; ports: - &amp;#34;30303:30303&amp;#34; - &amp;#34;8545:8545&amp;#34; - &amp;#34;8080:8080&amp;#34; command: &amp;#39;--dev --rpc --rpcapi &amp;#34;db,eth,net,web3,personal,admin,miner&amp;#34; --rpccorsdomain=&amp;#34;*&amp;#34; --rpcaddr &amp;#34;0.0.0.0&amp;#34;&amp;#39; dockerコマンドの場合
+# コンテナ起動$ docker run -it --name &amp;#39;client-go&amp;#39; \  -p &amp;#39;8545:8545&amp;#39; -p &amp;#39;8080:8080&amp;#39; -p &amp;#39;30303:30303&amp;#39; \  -v &amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>hugo install</title>
+      <link>https://tkikuchi2000.github.io/experimental-knowledge/posts/hugo-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tkikuchi2000.github.io/experimental-knowledge/posts/hugo-install/</guid>
+      <description>Getting Started インストール 参考: Install Hugo
+homebrew(macOS) $ brew install hugo  chocolatey(Windows) &amp;gt; choco install hugo -confirm  apt-get(Ubuntu) $ apt-get install hugo  Pygmentsインストール (Optional) ソースコードハイライトのためにインストール
+$ pip install Pygments  Shortcode: highlight language
+Quick Start 参考: Quick Start
+サイト新規作成 $ hugo new site &amp;lt;site-name&amp;gt; $ cd &amp;lt;site-name&amp;gt; $ git init  テーマ追加 themes.gohugo.ioからテーマを選択
+# git submodule で追加 $ git submodule add &amp;lt;repo-url&amp;gt; themes/&amp;lt;theme-name&amp;gt; # 設定ファイルにテーマをセット $ echo &#39;theme = &amp;quot;&amp;lt;theme-name&amp;gt;&amp;quot;&#39; &amp;gt;&amp;gt; config.</description>
+    </item>
+    
   </channel>
 </rss>

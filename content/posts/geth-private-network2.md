@@ -1,7 +1,7 @@
 ---
 title: "Geth: プライベートネットワーク作成2"
 date: 2018-06-03T14:09:05+09:00
-draft: true
+draft: false
 description: "アカウント作成～マイニング"
 featured_image: "/images/ethereum_logo.png"
 tags: [docker, ethereum, blockchain, geth, go]
