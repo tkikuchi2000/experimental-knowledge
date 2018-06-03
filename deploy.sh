@@ -20,4 +20,4 @@ git commit -m "$msg"
 
 # Push source and build repos.
 git push origin master
-git subtree push --prefix=public git@github.com:tkikuchi2000/experimental-knowledge.git gh-pages
+git subtree push --prefix=public https://github.com/tkikuchi2000/experimental-knowledge.git gh-pages
