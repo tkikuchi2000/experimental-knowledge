@@ -32,7 +32,7 @@
 <meta property="og:description" content="インストール 参考: Deployment
 Quick start dockerコマンド
 $ docker volume create portainer_data $ docker run -d \ -p 9000:9000 \ --name portainer \ --restart always \ -v /var/run/docker.sock:/var/run/docker.sock \ -v portainer_data:/data \ portainer/portainer  docker-composeコマンド
-$ docker-compose up -d  $ cat docker-compose.yml version: &#39;2&#39; services: portainer: image: portainer/portainer ports: - &quot;9000:9000&quot; volumes: - /var/run/docker.sock:/var/run/docker.sock - portainer_data:/data restart: always volumes: portainer_data:  Docker for Windowsの注意点 Docker for Windows Ver.18.03.0 でdocker-composeを利用すると、以下のエラー発生" />
+$ docker-compose up -d  $ cat docker-compose.yml version: &#39;2&#39; services: portainer: image: portainer/portainer ports: - &quot;9000:9000&quot; volumes: - /var/run/docker.sock:/var/run/docker.sock - portainer_data:/data restart: always volumes: portainer_data:  Docker for Windows Ver.18.03~ の注意点 Docker for Windows Ver." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tkikuchi2000.github.io/experimental-knowledge/posts/portainer-install/" />
 
@@ -56,12 +56,12 @@ $ docker-compose up -d  $ cat docker-compose.yml version: &#39;2&#39; services: 
 <meta itemprop="description" content="インストール 参考: Deployment
 Quick start dockerコマンド
 $ docker volume create portainer_data $ docker run -d \ -p 9000:9000 \ --name portainer \ --restart always \ -v /var/run/docker.sock:/var/run/docker.sock \ -v portainer_data:/data \ portainer/portainer  docker-composeコマンド
-$ docker-compose up -d  $ cat docker-compose.yml version: &#39;2&#39; services: portainer: image: portainer/portainer ports: - &quot;9000:9000&quot; volumes: - /var/run/docker.sock:/var/run/docker.sock - portainer_data:/data restart: always volumes: portainer_data:  Docker for Windowsの注意点 Docker for Windows Ver.18.03.0 でdocker-composeを利用すると、以下のエラー発生">
+$ docker-compose up -d  $ cat docker-compose.yml version: &#39;2&#39; services: portainer: image: portainer/portainer ports: - &quot;9000:9000&quot; volumes: - /var/run/docker.sock:/var/run/docker.sock - portainer_data:/data restart: always volumes: portainer_data:  Docker for Windows Ver.18.03~ の注意点 Docker for Windows Ver.">
 
 
 <meta itemprop="datePublished" content="2018-06-24T10:52:34&#43;09:00" />
 <meta itemprop="dateModified" content="2018-06-24T10:52:34&#43;09:00" />
-<meta itemprop="wordCount" content="210">
+<meta itemprop="wordCount" content="212">
 
 
 
@@ -71,7 +71,7 @@ $ docker-compose up -d  $ cat docker-compose.yml version: &#39;2&#39; services: 
 <meta name="twitter:description" content="インストール 参考: Deployment
 Quick start dockerコマンド
 $ docker volume create portainer_data $ docker run -d \ -p 9000:9000 \ --name portainer \ --restart always \ -v /var/run/docker.sock:/var/run/docker.sock \ -v portainer_data:/data \ portainer/portainer  docker-composeコマンド
-$ docker-compose up -d  $ cat docker-compose.yml version: &#39;2&#39; services: portainer: image: portainer/portainer ports: - &quot;9000:9000&quot; volumes: - /var/run/docker.sock:/var/run/docker.sock - portainer_data:/data restart: always volumes: portainer_data:  Docker for Windowsの注意点 Docker for Windows Ver.18.03.0 でdocker-composeを利用すると、以下のエラー発生"/>
+$ docker-compose up -d  $ cat docker-compose.yml version: &#39;2&#39; services: portainer: image: portainer/portainer ports: - &quot;9000:9000&quot; volumes: - /var/run/docker.sock:/var/run/docker.sock - portainer_data:/data restart: always volumes: portainer_data:  Docker for Windows Ver.18.03~ の注意点 Docker for Windows Ver."/>
 
   </head>
 
@@ -184,7 +184,7 @@ volumes:
   portainer_data:
 </code></pre>
 
-<h3 id="docker-for-windowsの注意点">Docker for Windowsの注意点</h3>
+<h3 id="docker-for-windows-ver-18-03-の注意点">Docker for Windows Ver.18.03~ の注意点</h3>
 
 <p>Docker for Windows Ver.18.03.0 で<code>docker-compose</code>を利用すると、以下のエラー発生</p>
 
@@ -302,7 +302,7 @@ Starting portainer_portainer_1 ... done
 <li><a href="#インストール">インストール</a>
 <ul>
 <li><a href="#quick-start">Quick start</a></li>
-<li><a href="#docker-for-windowsの注意点">Docker for Windowsの注意点</a></li>
+<li><a href="#docker-for-windows-ver-18-03-の注意点">Docker for Windows Ver.18.03~ の注意点</a></li>
 </ul></li>
 </ul></li>
 </ul>

@@ -134,7 +134,7 @@
       インストール 参考: Deployment
 Quick start dockerコマンド
 $ docker volume create portainer_data $ docker run -d \ -p 9000:9000 \ --name portainer \ --restart always \ -v /var/run/docker.sock:/var/run/docker.sock \ -v portainer_data:/data \ portainer/portainer  docker-composeコマンド
-$ docker-compose up -d  $ cat docker-compose.yml version: '2' services: portainer: image: portainer/portainer ports: - &quot;9000:9000&quot; volumes: - /var/run/docker.sock:/var/run/docker.sock - portainer_data:/data restart: always volumes: portainer_data:  Docker for Windowsの注意点 Docker for Windows Ver.18.03.0 でdocker-composeを利用すると、以下のエラー発生
+$ docker-compose up -d  $ cat docker-compose.yml version: '2' services: portainer: image: portainer/portainer ports: - &quot;9000:9000&quot; volumes: - /var/run/docker.sock:/var/run/docker.sock - portainer_data:/data restart: always volumes: portainer_data:  Docker for Windows Ver.18.03~ の注意点 Docker for Windows Ver.
     </div>
   </div>
 </div>

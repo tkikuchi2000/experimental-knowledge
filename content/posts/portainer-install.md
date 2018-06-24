@@ -14,7 +14,7 @@ toc: true
 
 ### Quick start
 
-`docker`コマンド 
+`docker`コマンド
 
 ```bash
 $ docker volume create portainer_data
@@ -50,7 +50,7 @@ volumes:
   portainer_data:
 ```
 
-### Docker for Windowsの注意点
+### Docker for Windows Ver.18.03~ の注意点
 
 Docker for Windows Ver.18.03.0 で`docker-compose`を利用すると、以下のエラー発生
 
