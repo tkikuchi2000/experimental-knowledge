@@ -2,6 +2,7 @@ baseURL = "https://tkikuchi2000.github.io/experimental-knowledge/"
 languageCode = "ja-jp"
 title = "Experimental Knowledge"
 theme = "ananke"
+canonifyurls = true
 
 MetaDataFormat = "yaml"
 DefaultContentLanguage = "ja"
