@@ -6,10 +6,22 @@
     <description>Recent content on Experimental Knowledge</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 03 Jun 2018 15:09:05 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 24 Jun 2018 10:52:34 +0900</lastBuildDate>
     
 	<atom:link href="https://tkikuchi2000.github.io/experimental-knowledge/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Portainer Install</title>
+      <link>https://tkikuchi2000.github.io/experimental-knowledge/posts/portainer-install/</link>
+      <pubDate>Sun, 24 Jun 2018 10:52:34 +0900</pubDate>
+      
+      <guid>https://tkikuchi2000.github.io/experimental-knowledge/posts/portainer-install/</guid>
+      <description>インストール 参考: Deployment
+Quick start dockerコマンド
+$ docker volume create portainer_data $ docker run -d \ -p 9000:9000 \ --name portainer \ --restart always \ -v /var/run/docker.sock:/var/run/docker.sock \ -v portainer_data:/data \ portainer/portainer  docker-composeコマンド
+$ docker-compose up -d  $ cat docker-compose.yml version: &#39;2&#39; services: portainer: image: portainer/portainer ports: - &amp;quot;9000:9000&amp;quot; volumes: - /var/run/docker.sock:/var/run/docker.sock - portainer_data:/data restart: always volumes: portainer_data:  Docker for Windowsの注意点 Docker for Windows Ver.18.03.0 でdocker-composeを利用すると、以下のエラー発生</description>
+    </item>
     
     <item>
       <title>Geth: プライベートネットワーク作成3</title>
